@@ -179,6 +179,7 @@
     <Content Include="Views\Home\Intro\KnockoutHello.cshtml" />
     <Content Include="Views\Home\ComputedObservables\ComputedObservables.cshtml" />
     <Content Include="Views\Home\ObservableArrays\ObservableArrays.cshtml" />
+    <Content Include="Views\Home\UnitTestable\UnitTestable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
