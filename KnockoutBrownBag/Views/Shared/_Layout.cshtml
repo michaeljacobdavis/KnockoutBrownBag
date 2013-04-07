@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
     <link href="~/Content/normalize.css" rel="stylesheet" />
+    <link href="~/Content/Style.css" rel="stylesheet" />
 </head>
 <body>
     @RenderBody()
@@ -12,6 +12,7 @@
     @Scripts.Render("~/bundles/jquery")
     <script src="~/Scripts/knockout-2.2.1.js"></script>
     <script src="~/Scripts/knockout.validation.debug.js"></script>
+    
     @RenderSection("scripts", required: false)
 </body>
 </html>

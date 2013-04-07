@@ -1,0 +1,12 @@
+﻿<label>Name: <input data-bind="value: name" type="text"/></label>
+<div data-bind="visible: name">Hello <span data-bind="text: name"></span></div>
+
+@section scripts
+{
+    <script>
+        var viewModel = {
+            name: ko.observable()
+        };
+        ko.applyBindings(viewModel);
+    </script>
+}

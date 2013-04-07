@@ -1,0 +1,38 @@
+﻿<label>First: <input data-bind="value: first" type="text"/></label>
+<label>Last: <input data-bind="value: last" type="text"/></label>
+<button data-bind="click: add">Add</button>
+<ul data-bind="foreach: contacts">
+    <li data-bind="text: fullName"></li>
+</ul>
+
+@section scripts
+{
+    <script>
+        // Model
+        var Person = function (first, last) {
+            var self = this;
+            self.first = ko.observable(first);
+            self.last = ko.observable(last);
+            self.fullName = ko.computed(function () {
+                if (!self.first() || !self.last()) return null;
+                return self.first() + ' ' + self.last();
+            });
+        };
+
+        var ViewModel = function () {
+            var self = this;
+            self.first = ko.observable();
+            self.last = ko.observable();
+
+            self.contacts = ko.observableArray([
+                new Person('Mike', 'Davis')
+            ]);
+        };
+
+        ViewModel.prototype.add = function () {
+            this.contacts.push(new Person(this.first(), this.last()));
+        };
+
+        ko.applyBindings(new ViewModel());
+    </script>
+}

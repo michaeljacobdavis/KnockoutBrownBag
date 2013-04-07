@@ -1,0 +1,19 @@
+﻿<label>First: <input data-bind="value: first" type="text"/></label>
+<label>Last: <input data-bind="value: last" type="text"/></label>
+<div data-bind="visible: fullName">Hello <span data-bind="text: fullName"></span></div>
+
+@section scripts
+{
+    <script>
+        var ViewModel = function () {
+            var self = this;
+            self.first = ko.observable();
+            self.last = ko.observable();
+            self.fullName = ko.computed(function () {
+                if (!self.first() || !self.last()) return null;
+                return self.first() + ' ' + self.last();
+            });
+        };
+        ko.applyBindings(new ViewModel());
+    </script>
+}
