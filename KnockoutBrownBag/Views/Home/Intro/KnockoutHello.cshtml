@@ -4,9 +4,10 @@
 @section scripts
 {
     <script>
-        var viewModel = {
-            name: ko.observable()
+        var ViewModel = function () {
+            var self = this;
+            self.name = ko.observable();
         };
-        ko.applyBindings(viewModel);
+        ko.applyBindings(new ViewModel());
     </script>
 }

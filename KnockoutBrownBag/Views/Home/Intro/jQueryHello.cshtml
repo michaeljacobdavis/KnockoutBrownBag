@@ -1,5 +1,14 @@
-﻿@{
-    ViewBag.Title = "jQueryHello";
-}
+﻿<label>Name: <input id="name" type="text"/></label>
+<div id="hello" style="display: none;">Hello <span id="hello-name"></span></div>
 
-<h2>jQueryHello</h2>
+@section scripts
+{
+    <script>
+        $(function () {
+            $('#name').on('change', function () {
+                $(this).val() ? $('#hello').show() : $('#hello').hide();
+                $('#hello-name').text($(this).val());
+            });
+        });
+    </script>
+}
