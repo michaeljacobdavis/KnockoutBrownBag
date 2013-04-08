@@ -180,6 +180,7 @@
     <Content Include="Views\Home\ComputedObservables\ComputedObservables.cshtml" />
     <Content Include="Views\Home\ObservableArrays\ObservableArrays.cshtml" />
     <Content Include="Views\Home\UnitTestable\UnitTestable.cshtml" />
+    <Content Include="Views\Home\Binding\Binding.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
